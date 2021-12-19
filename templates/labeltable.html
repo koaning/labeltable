@@ -1,0 +1,22 @@
+<form id="label-table"">
+    <input type='hidden' value='{{orig_id}}' name='origid'>
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Text</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Similar?</th>
+            </tr>
+        </thead>
+        <tbody id="tbody" class="bg-white divide-y divide-gray-200">
+            {% for string in strings %}
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{string}}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    <input type='hidden' value='off' name='{{string}}'>
+                    <input type="checkbox" name="{{string}}">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
